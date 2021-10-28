@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2021 at 07:50 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Generation Time: Oct 28, 2021 at 03:38 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `school`
+-- Database: `sms`
 --
 
 -- --------------------------------------------------------
@@ -42,15 +42,16 @@ CREATE TABLE `admin` (
   `stud` text NOT NULL,
   `admn` text NOT NULL,
   `staf` text NOT NULL,
-  `emal` text NOT NULL
+  `emal` text NOT NULL,
+  `session` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`Admin No.`, `Password`, `id`, `school`, `website`, `alias`, `adm`, `tel`, `addr`, `tagline`, `blksmsname`, `stud`, `admn`, `staf`, `emal`) VALUES
-('pms/admin', '8f96e4f5fcff936298f13a4b8db8a242', 1, 'CMS Demo', 'https://admincms.dotdemo.com.ng', 'Demo', 'DOT', '09010484986', 'Ikole-Ekiti, Ekiti State.', 'Building business web confidence...', 'DotEightPlus', 'https://studentcms.dotdemo.com.ng', 'https://admincms.dotdemo.com', 'https://staffcms.dotdemo.com', 'info@dotdemo.com.ng');
+INSERT INTO `admin` (`Admin No.`, `Password`, `id`, `school`, `website`, `alias`, `adm`, `tel`, `addr`, `tagline`, `blksmsname`, `stud`, `admn`, `staf`, `emal`, `session`) VALUES
+('pms/admin', '8f96e4f5fcff936298f13a4b8db8a242', 1, 'CUBIC JOY SCHOOL', 'https://cubicjoyschool.com', 'Cubic Joy School', 'CJS', '09010484986', 'Ikole-Ekiti, Ekiti State.', 'Building business web confidence...', 'CubicJoy', 'https://student.cubicjoyschool.com', 'https://admin.cubicjoyschool.com', 'https://staff.cubicjoyschool.com', 'enquiries@cubicjoyschool.com', '2021/2022');
 
 -- --------------------------------------------------------
 

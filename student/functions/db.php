@@ -1,7 +1,7 @@
 <?php
 //creating the database to use
-//$con = mysqli_connect("localhost","dotdemoc_democms","securemelikekilode","dotdemoc_dotdemoc_demo_cbt");
-$con = mysqli_connect("localhost","root","","sms");
+$con = mysqli_connect("localhost","cubicjoy_user","securemelikekilode","cubicjoy_cms");
+//$con = mysqli_connect("localhost","root","","sms");
 
 function row_count($result) {
 
