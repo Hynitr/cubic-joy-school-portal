@@ -81,7 +81,7 @@
  {
   ?>
                             <?php echo'
-          <img style="width: 60px" src="'.$call['admn'].'/upload/staffDP/'.$row['passport'].'" class="img-circle elevation-2" alt="Profile Picture">';
+          <img style="width: 70px; height: 90px" src="'.$call['admn'].'/upload/staffDP/'.$row['passport'].'" class="img-circle img-fluid elevation-2" alt="Profile Picture">';
           ?>
                         </div>
                         <div class="info">
@@ -202,13 +202,13 @@
   ?>
                                     <li class="nav-item">
                                         <?php echo '
-                <a target="_blank" href="'.$call['admn'].'/upload/employ/'.$pass.'.pdf" class="nav-link">
+                <a target="_blank" href="'.$call['admn'].'/empl?id='.$_SESSION['staff_id'].'" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Employment Letter</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a target="_blank" href="'.$call['admn'].'/upload/StaffId/'.$pass.'.php" class="nav-link">
+                <a target="_blank" href="'.$call['admn'].'/atcard?id='.$_SESSION['staff_id'].'" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Staff ID Card</p>
                 </a>

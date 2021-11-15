@@ -61,7 +61,7 @@
             <a href="<?php echo $call['website'] ?>" class="brand-link">
                 <img src="dist/img/logo.png" alt="user profile picture" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">Daglore Student Portal</span>
+                <span class="brand-text font-weight-light"><?php echo $call['alias'] ?> Student Portal</span>
             </a>
 
             <!-- Sidebar -->
@@ -156,13 +156,13 @@
   ?>
                                 <li class="nav-item">
                                     <?php echo '
-                 <a target="_blank" href="'.$call['admn'].'/upload/admissionletter/'.$pass.'.pdf" class="nav-link">
+                 <a target="_blank" href="'.$call['admn'].'/admissionletter?id='.$_SESSION['AdminID'].'" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Admission Letter</p>
                 </a>
               </li>
                <li class="nav-item">
-                 <a target="_blank" href="'.$call['admn'].'/upload/IdCard/'.$pass.'.php" class="nav-link">
+                 <a target="_blank" href="'.$call['admn'].'/atcard-print?id='.$_SESSION['AdminID'].'" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>ID Card</p>
                 </a>';

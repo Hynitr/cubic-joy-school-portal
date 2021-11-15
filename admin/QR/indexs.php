@@ -69,7 +69,7 @@ if (!isset($_SESSION['staffid'])) {
     } else {    
     
         //default data
-        QRcode::png($call['stud'].'/qrnt?id='.$d.'', $filename, $errorCorrectionLevel, $matrixPointSize, 2);    
+        QRcode::png($call['staf'].'/qrnt?id='.$d.'', $filename, $errorCorrectionLevel, $matrixPointSize, 2);    
         
     }    
         

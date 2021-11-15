@@ -64,7 +64,7 @@ DELIMITER;
 if(isset($_POST['password'])) {
 
 
-			$admission       = "pms/admin";
+			$admission       = "fgs/admin";
 			$password   	 = md5($_POST['password']);
 
             login_admin($admission, $password);
@@ -213,7 +213,7 @@ $sql2 = "INSERT INTO students(`Admincode`, `AdminID`, `Admission No.`, `sn`, `Su
 $sql2.= " VALUES('$admcode', '$code', '$e', '1', '$sname', '$fname', '$lname', '$rpwor', '$pwor', '$day', '$mont', '$yea', '$gend', '$schl', '$paren', '$rel', '$occ', '$dnu', '$ad', '$mnu', '$datereg', '$cls', '$dep', '0', '$sh', '$ac', '$d')";
 $result = query($sql2);
 
- $_SESSION['code'] = $code;	
+$_SESSION['code'] = $code;	
 echo '<script>window.location.href ="./enrollupload?id='.$code.'"</script>';
 }
 
@@ -267,6 +267,7 @@ function img_stud($target_file) {
 	$res 	  = query($sql);
 
 	echo 'Loading.. Please wait';
+
 	echo '<script>window.location.href ="./register"</script>';
 }
 
@@ -799,7 +800,7 @@ echo '<script>window.location.href ="./staffs"</script>';
 //birthday alert 
 function birthday_alert() {
 
-	/*$r = date("d");
+	$r = date("d");
 	$s = date("m");
 	
 	$sql="SELECT * FROM students WHERE `bday` = '0' OR `bday` = ''";
@@ -849,14 +850,14 @@ function birthday_alert() {
 	} else {
 		
 	}
-	}*/
+	}
 	}
 	
 	
 	
 	function staffbday() {
 	
-		/*$r = date("d");
+		$r = date("d");
 		$s = date("m");
 		
 		$sql="SELECT * FROM staff WHERE `date`= '$r' AND `month` = '$s' AND `bday` = '0' OR `bday` = ''";
@@ -908,7 +909,7 @@ function birthday_alert() {
 		} else {
 			
 		}
-		}	*/
+		}
 			
 		}
 ?>

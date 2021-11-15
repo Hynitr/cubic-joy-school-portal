@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2021 at 03:38 PM
+-- Generation Time: Nov 15, 2021 at 05:55 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -51,7 +51,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`Admin No.`, `Password`, `id`, `school`, `website`, `alias`, `adm`, `tel`, `addr`, `tagline`, `blksmsname`, `stud`, `admn`, `staf`, `emal`, `session`) VALUES
-('pms/admin', '8f96e4f5fcff936298f13a4b8db8a242', 1, 'CUBIC JOY SCHOOL', 'https://cubicjoyschool.com', 'Cubic Joy School', 'CJS', '09010484986', 'Ikole-Ekiti, Ekiti State.', 'Building business web confidence...', 'CubicJoy', 'https://student.cubicjoyschool.com', 'https://admin.cubicjoyschool.com', 'https://staff.cubicjoyschool.com', 'enquiries@cubicjoyschool.com', '2021/2022');
+('fgs/admin', '8f96e4f5fcff936298f13a4b8db8a242', 1, 'Fountain of Gold School', 'http://localhost/jobs/fgsportal/admin', 'Demo', 'DOT', '09010484986', 'Ikole-Ekiti, Ekiti State.', 'Building business web confidence...', 'Doteightplus', 'http://localhost/software/DemoSCMS/student', 'http://localhost/software/DemoSCMS/admin', 'http://localhost/software/DemoSCMS/staff', 'info@dotdemo.com.ng', '2021/2022');
 
 -- --------------------------------------------------------
 
@@ -126,7 +126,8 @@ CREATE TABLE `motor` (
   `totgra` text NOT NULL,
   `tso` text NOT NULL,
   `tsa` text NOT NULL,
-  `tsp` text NOT NULL
+  `tsp` text NOT NULL,
+  `ses` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -150,7 +151,8 @@ CREATE TABLE `result` (
   `position` text NOT NULL,
   `grade` text NOT NULL,
   `remark` text NOT NULL,
-  `term` text NOT NULL
+  `term` text NOT NULL,
+  `ses` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -166,7 +168,8 @@ CREATE TABLE `score` (
   `fscore` text NOT NULL,
   `sndscore` text NOT NULL,
   `tscore` text NOT NULL,
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `ses` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -186,6 +189,24 @@ CREATE TABLE `security` (
 
 INSERT INTO `security` (`id`, `identifier`) VALUES
 (1, '184da1856d2c36dc9e95cff7582a07dc');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `id` int(11) NOT NULL,
+  `ses` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sessions`
+--
+
+INSERT INTO `sessions` (`id`, `ses`) VALUES
+(2, '2021/2022');
 
 -- --------------------------------------------------------
 
@@ -232,15 +253,33 @@ CREATE TABLE `staff` (
   `qrcode` text NOT NULL,
   `admletter` text NOT NULL,
   `idcard` text NOT NULL,
-  `active` text NOT NULL
+  `active` text NOT NULL,
+  `bday` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`sn`, `id`, `staffcode`, `staffno`, `staffid`, `qrid`, `title`, `surname`, `firstname`, `othername`, `date`, `month`, `year`, `gender`, `tertiary`, `discipline`, `category`, `staffpost`, `staffclass`, `subject`, `salary`, `transport`, `medical`, `gross`, `datereg`, `qual`, `marital`, `nok`, `relation`, `nokocc`, `radd`, `nokradd`, `tel1`, `tel2`, `passport`, `qrcode`, `admletter`, `idcard`, `active`) VALUES
-('', 22, '', '1000', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '', '', '', '', '', '', '', '', '', '', '', 'DMSSTAFF20211001.pdf', '', '9');
+INSERT INTO `staff` (`sn`, `id`, `staffcode`, `staffno`, `staffid`, `qrid`, `title`, `surname`, `firstname`, `othername`, `date`, `month`, `year`, `gender`, `tertiary`, `discipline`, `category`, `staffpost`, `staffclass`, `subject`, `salary`, `transport`, `medical`, `gross`, `datereg`, `qual`, `marital`, `nok`, `relation`, `nokocc`, `radd`, `nokradd`, `tel1`, `tel2`, `passport`, `qrcode`, `admletter`, `idcard`, `active`, `bday`) VALUES
+('', 22, '', '1000', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '', '', '', '', '', '', '', '', '', '', '', 'DMSSTAFF20211001.pdf', '', '9', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staffattend`
+--
+
+CREATE TABLE `staffattend` (
+  `id` int(11) NOT NULL,
+  `staffid` text NOT NULL,
+  `qrid` text NOT NULL,
+  `name` text NOT NULL,
+  `timein` time NOT NULL,
+  `timeout` time NOT NULL,
+  `date` date NOT NULL,
+  `month` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -281,15 +320,16 @@ CREATE TABLE `students` (
   `Passport` text NOT NULL,
   `admletter` text NOT NULL,
   `qrcode` text NOT NULL,
-  `idcard` text NOT NULL
+  `idcard` text NOT NULL,
+  `bday` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `sn`, `Admincode`, `Admission No.`, `AdminID`, `qrid`, `SurName`, `Middle Name`, `Last Name`, `Date`, `Month`, `Year`, `Gender`, `cbk`, `suF`, `schlst`, `parent`, `relation`, `occupation`, `SchF`, `AcF`, `Telephone1`, `Address 1`, `Address 2`, `Telephone2`, `Datereg`, `Class`, `Department`, `Active`, `Passport`, `admletter`, `qrcode`, `idcard`) VALUES
-(136, '', '', '1000', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '9', '', 'DMSSTUD20211001.pdf', '', '');
+INSERT INTO `students` (`id`, `sn`, `Admincode`, `Admission No.`, `AdminID`, `qrid`, `SurName`, `Middle Name`, `Last Name`, `Date`, `Month`, `Year`, `Gender`, `cbk`, `suF`, `schlst`, `parent`, `relation`, `occupation`, `SchF`, `AcF`, `Telephone1`, `Address 1`, `Address 2`, `Telephone2`, `Datereg`, `Class`, `Department`, `Active`, `Passport`, `admletter`, `qrcode`, `idcard`, `bday`) VALUES
+(136, '', '', '1000', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '9', '', 'DMSSTUD20211001.pdf', '', 'upload/IdCard/.php', '0');
 
 -- --------------------------------------------------------
 
@@ -306,13 +346,6 @@ CREATE TABLE `upassignment` (
   `class` text NOT NULL,
   `adminid` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `upassignment`
---
-
-INSERT INTO `upassignment` (`sn`, `id`, `file`, `name`, `date`, `class`, `adminid`) VALUES
-(0, 5, 'TEAGO NIGERIA(1).pdf', 'Abolade Greatness', '2021-05-22 06:26:59', 'J.S.S 1', 'DMS/STUD/2021/1');
 
 --
 -- Indexes for dumped tables
@@ -361,9 +394,21 @@ ALTER TABLE `security`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `staffattend`
+--
+ALTER TABLE `staffattend`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -392,7 +437,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `assignment`
 --
 ALTER TABLE `assignment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `entrance`
@@ -404,19 +449,19 @@ ALTER TABLE `entrance`
 -- AUTO_INCREMENT for table `motor`
 --
 ALTER TABLE `motor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1544;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1547;
 
 --
 -- AUTO_INCREMENT for table `score`
 --
 ALTER TABLE `score`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=823;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=824;
 
 --
 -- AUTO_INCREMENT for table `security`
@@ -425,22 +470,34 @@ ALTER TABLE `security`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `sessions`
+--
+ALTER TABLE `sessions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `staffattend`
+--
+ALTER TABLE `staffattend`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
 -- AUTO_INCREMENT for table `upassignment`
 --
 ALTER TABLE `upassignment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

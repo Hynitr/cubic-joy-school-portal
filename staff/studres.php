@@ -39,7 +39,7 @@ $rower = mysqli_fetch_array($res);
 
     <?php
  $sql= "SELECT * FROM `result` WHERE `admno` = '$data' AND `term` = '$term' AND `ses` = '$ses'";
- $result_set=query($sql);
+ $result_set = query($sql);
  while($row= mysqli_fetch_array($result_set))
  {
   if(row_count($result_set) == "") {

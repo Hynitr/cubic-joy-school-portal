@@ -885,5 +885,5 @@ function birthday_alert() {
 		}
 		}	
 			
-		}
+		} 
 ?>

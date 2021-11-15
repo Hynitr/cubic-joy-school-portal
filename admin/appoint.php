@@ -153,7 +153,7 @@ include("functions/top.php");
                                         <option name="class" id="lass">Degree</option>
                                         <option name="class" id="lass">HND</option>
                                         <option name="class" id="lass">OND</option>
-                                        <option name="class" id="lass">NCE/option>
+                                        <option name="class" id="lass">NCE</option>
                                         <option name="class" id="lass">SSCE</option>
                                     </select>
                                 </div>
@@ -221,8 +221,8 @@ include("functions/top.php");
 
                                     <div class="input-group">
                                         <input type="text" name="post" id="post"
-                                            placeholder="Bursar, Principal, Subject Teacher e.t.c" class="form-control"
-                                            required>
+                                            placeholder="Class Teacher, Principal, Subject Teacher e.t.c"
+                                            class="form-control" required>
                                     </div>
                                     <!-- /.input group -->
                                 </div>

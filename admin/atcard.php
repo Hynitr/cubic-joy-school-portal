@@ -49,10 +49,11 @@ $sql ="SELECT * FROM staff WHERE `staffid` = '".$_SESSION["staffid"]."'";
             <div class="card-header text-center border-bottom-0">
                 <div class="ribbon-wrapper">
                     <div style="padding: 0px;" class="ribbon bg-black">
-                        <span style="font-size: 6px; text-transform: none;">Govt. &nbsp;Approved</span>
+                        <span style="font-size: 6px; text-transform: none;">Govt.
+                            &nbsp;Approved</span>
                     </div>
                 </div>
-                <img src="dist/img/logo.png" width="23px" height="23px">
+                <img src="dist/img/logo.png" width="28px" height="28px">
                 <h2 style="font-size: 14px;"><b><?php echo strtoupper($call['school'])?></b><br />
                     <small style="font-size: 9px;"><?php echo $call['addr']?></small>
                     <small style="font-size: 9x;">&nbsp;&nbsp; Tel: <?php echo $call['tel']?></small>
@@ -97,7 +98,7 @@ $sql ="SELECT * FROM staff WHERE `staffid` = '".$_SESSION["staffid"]."'";
                         <li style="font-size: 11px;">If found, kindly return to the address<br /> stated below;</li>
                     </ul>
                     <div class="card-header text-center pt-0">
-                        <img src="dist/img/logo.png" width="23px" height="23px">
+                        <img src="dist/img/logo.png" width="28px" height="28px">
                         <h2 style="font-size: 14px; color: white"><b><?php echo strtoupper($call['school'])?></b><br />
                             <small style="font-size: 10px;"><?php echo $call['addr']?></small>
                             <small style="font-size: 10px;">&nbsp;Tel: <?php echo $call['tel']?></small>
@@ -191,7 +192,7 @@ $sql ="SELECT * FROM staff WHERE `staffid` = '".$_GET["id"]."'";
                         <span style="font-size: 6px; text-transform: none;">Govt. &nbsp;Approved</span>
                     </div>
                 </div>
-                <img src="dist/img/logo.png" width="23px" height="23px">
+                <img src="dist/img/logo.png" width="28px" height="28px">
                 <h2 style="font-size: 14px;"><b><?php echo strtoupper($call['school'])?></b><br />
                     <small style="font-size: 9px;"><?php echo $call['addr']?></small>
                     <small style="font-size: 9px;">&nbsp;&nbsp; Tel: <?php echo $call['tel']?></small>
@@ -236,7 +237,7 @@ $sql ="SELECT * FROM staff WHERE `staffid` = '".$_GET["id"]."'";
                         <li style="font-size: 11px;">If found, kindly return to the address<br /> stated below;</li>
                     </ul>
                     <div class="card-header text-center pt-0">
-                        <img src="dist/img/logo.png" width="23px" height="23px">
+                        <img src="dist/img/logo.png" width="28px" height="28px">
                         <h2 style="font-size: 14px; color: white"><b><?php echo strtoupper($call['school'])?></b><br />
                             <small style="font-size: 10px;"><?php echo $call['addr']?></small>
                             <small style="font-size: 10px;">&nbsp;Tel: <?php echo $call['tel']?></small>

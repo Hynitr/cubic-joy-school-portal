@@ -1,19 +1,17 @@
 <?php
-date_default_timezone_set('Africa/Lagos');
-session_start();
-$con = mysqli_connect("localhost","paradi12_users","securemelikekilode","paradi12_scms");
-
 if(!isset($_SESSION['secured'])) {
-	header("location: ./invalid");
+	redirect("./invalid");
 } else {
+	
 	if(!isset($_GET['id'])) {
-			header("location: ./invalid");
+		redirect("./invalid");
 	} else {
 
 		$data = $_GET['id'];
 	}
 
-	$cons = mysqli_query($con,"SELECT * from `staff` WHERE `qrid` = '$data'");
+	$sql = "SELECT * from `staff` WHERE `qrid` = '$data'";
+	$cons = query($sql);
 	while ($row = mysqli_fetch_array($cons)) {
 	    $z = $row['qrid'];
 		$y = date("a");
@@ -37,7 +35,7 @@ if(!isset($_SESSION['secured'])) {
 		$a = urlencode('Greatnessabolade@outlook.com'); //Note: urlencodemust be added forusernameand
 		$b = urlencode('securemelikekilode'); // passwordas encryption code for security purpose.
 		$c = "Hello sir , ".$m." resumed school ".$j." Thank you!";
-		$d = "Paradise";
+		$d = $_SESSION['cal']['blksmsname'];
 		$e = $x;
 		$url = "https://portal.nigeriabulksms.com/api/?username=".$a."&password=".$b."&message=".$c."&sender=".$d."&mobiles=".$e;
 		
@@ -54,13 +52,13 @@ if(!isset($_SESSION['secured'])) {
 		} else {
 		
 		$sl = "UPDATE staff set `active` = '1' WHERE `qrid` = '$data'";
-		$re = mysqli_query($con, $sl);
+		$re = query($sl);
 
 
 		//update attendance record
 		$attend = "INSERT into staffattend(`staffid`, `name`, `timein`, `date`, `month`, `qrid`)";
 		$attend .= "VALUES('$i', '$m', '$j', '$n', '$t', '$data')";
-		$atsss  = mysqli_query($con, $attend);
+		$atsss  = query($attend);
 
 		// notification message
 		echo '
@@ -70,11 +68,11 @@ if(!isset($_SESSION['secured'])) {
 		<head>
 		  <meta charset="utf-8">
 		  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		  <title> Paradise Model School | Staff Portal</title>
+		  <title> '.$call["school"].' | Staff Portal</title>
 		  <!-- Tell the browser to be responsive to screen width -->
 		  <meta name="viewport" content="width=device-width, initial-scale=1">
-		  <meta name="description" content="Paradise Model School">
-		  <meta name="keywords" content="Paradise Model School">
+		  <meta name="description" content="'.$call["school"].'">
+		  <meta name="keywords" content="'.$call["school"].'">
 		  <!-- Font Awesome -->
 		  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 		  <link rel="icon" href="dist/img/logo.png" type="image/png" />
@@ -89,7 +87,7 @@ if(!isset($_SESSION['secured'])) {
 		<!-- Automatic element centering -->
 		<div class="lockscreen-wrapper">
 		  <div class="lockscreen-logo">
-		    <a href="https://paradisemodelschool.com.ng"><b>Paradise Model School</b></a>
+		    <a href="'.$call["webste"].'"><b>'.$call["school"].'</b></a>
 		  </div>
 		  <!-- User name -->
 		  <div class="lockscreen-name">Staff now in school.</div>
@@ -108,7 +106,7 @@ if(!isset($_SESSION['secured'])) {
 		  </div>
 		  
 		  <div class="lockscreen-footer text-center">
-		    Copyright &copy; '.date("Y").' <b><a href="https://paradisemodelschool.com.ng" class="text-black">Paradise Model School</a></b><br>
+		    Copyright &copy; '.date("Y").' <b><a href="'.$call["website"].'" class="text-black">'.$call["school"].'</a></b><br>
 		    Developed by <a target="_blank" href="https://doteightplus.com" class="text-black"> DotEightPlus</a>
 		  </div>
 		</div>
@@ -164,11 +162,11 @@ if(!isset($_SESSION['secured'])) {
 		<head>
 		  <meta charset="utf-8">
 		  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		  <title>Paradise Model School | Staff Portal</title>
+		  <title>'.$call["school"].' | Staff Portal</title>
 		  <!-- Tell the browser to be responsive to screen width -->
 		  <meta name="viewport" content="width=device-width, initial-scale=1">
-		  <meta name="description" content="Paradise Model School">
-		  <meta name="keywords" content="Paradise Model School">
+		  <meta name="description" content="'.$call["school"].'">
+		  <meta name="keywords" content="'.$call["school"].'">
 		  <!-- Font Awesome -->
 		  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 		  <link rel="icon" href="dist/img/logo.png" type="image/png" />
@@ -183,7 +181,7 @@ if(!isset($_SESSION['secured'])) {
 		<!-- Automatic element centering -->
 		<div class="lockscreen-wrapper">
 		  <div class="lockscreen-logo">
-		    <a href="https://paradisemodelschool.com.ng"><b>Paradise Model School</b></a>
+		    <a href="'.$call["website"].'"><b>'.$call["school"].'</b></a>
 		  </div>
 		  <!-- User name -->
 		  <div class="lockscreen-name">Staff now out of school.</div>
@@ -202,7 +200,7 @@ if(!isset($_SESSION['secured'])) {
 		  </div>
 		  
 		  <div class="lockscreen-footer text-center">
-		    Copyright &copy; '.date("Y").' <b><a href="https://doteightplus.com" class="text-black">Paradise Model School</a></b><br>
+		    Copyright &copy; '.date("Y").' <b><a href="'.$call["website"].'" class="text-black">'.$call["school"].'</a></b><br>
 		   Developed by <a target="_blank" href="https://doteightplus.com" class="text-black"> DotEightPlus</a>
 		  </div>
 		</div>

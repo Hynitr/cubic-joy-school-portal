@@ -77,7 +77,7 @@ $hrt = $wsa['tot'];
                         <div class="form-group">
                             <label for="exampleInputEmail1">Input Subject .:</label>
                             <input type="text" value="<?php echo $sbj; ?>" class="form-control" id="stsbj"
-                                placeholder="Mathematics, English, Chemistry" disabled>
+                                placeholder="Mathematics, English, Chemistry">
                         </div>
 
 

@@ -91,13 +91,13 @@ while($row=mysqli_fetch_array($res)) {
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Delete a Student Database</h4>
+                <h4 class="modal-title">Delete a Staff Database</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>You are about to delete a student from the school database! <br /> Are you sure you want to continue?
+                <p>You are about to delete a staff from the school database! <br /> Are you sure you want to continue?
                 </p>
             </div>
             <div class="modal-footer justify-content-between">

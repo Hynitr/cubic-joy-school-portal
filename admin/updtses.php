@@ -22,10 +22,10 @@ include("functions/init.php");
     //update admin table
     $sql = "UPDATE `admin` SET `session` = '$aca'";
     $res = query($sql);
-
-	//update staff bdays
+	
 	$qrl = "SELECT * FROM staff WHERE `bday` = '' OR `bday` = '1'";
 	$rrl = query($qrl);
+	
 	while($rws = mysqli_fetch_array($rrl)){
 
 		//update to zero
@@ -36,13 +36,14 @@ include("functions/init.php");
 	//update student bdayss
 	$stt = "SELECT * FROM students WHERE `bday` = '' OR `bday` = '1'";
 	$sds = query($stt);
+	
 	while($pos = mysqli_fetch_array($sds)){
 
 		$psd = "UPDATE students SET `bday` = '0'";
 		$pss = query($psd);
 		
 	}
-
+	
 	//insert record into session table
 	$ses = "INSERT INTO `sessions`(`ses`)";
 	$ses .= "VALUES('$aca')";

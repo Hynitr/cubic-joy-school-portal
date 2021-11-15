@@ -16,6 +16,6 @@ $sql = "SELECT * FROM `admin`";
 $rsl = query($sql);
 $_SESSION['cal'] = mysqli_fetch_array($rsl);
 
-staffbday();
-birthday_alert();
+//staffbday();
+//birthday_alert();
 ?>
