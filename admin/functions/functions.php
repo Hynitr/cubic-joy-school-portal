@@ -64,7 +64,7 @@ DELIMITER;
 if(isset($_POST['password'])) {
 
 
-			$admission       = "fgs/admin";
+			$admission       = "cubic/admin";
 			$password   	 = md5($_POST['password']);
 
             login_admin($admission, $password);
