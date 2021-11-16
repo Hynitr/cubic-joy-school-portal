@@ -1,23 +1,22 @@
 {
-  "short_name": "Paradise Admin App",
-  "name": "Paradise Admin App",
-  "description": "Paradise Admin App",
+  "short_name": "Cubic Joy School",
+  "name": "Cubic Joy School",
+  "description": "Cubic Joy School",
   "lang": "en",
   "icons": [
     {
-      "src": "dist/img/favicon2.ico",
-      "type": "image/ico",
-      "sizes": "64x64"
+      "src": "img/pwa.png",
+      "sizes": "144x144"
     }
   ],
   "start_url": "./?v3&utm_source=web_app_manifest",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
-  "color": "#000000",
-  "display": "standalone",
-  "orientation": "portrait",
+  "background_color": "#223a66",
+  "theme_color": "#223a66",
+  "color": "#ffffff",
+  "display": "minimal-ui",
   "related_applications": [{
     "platform": "web",
-    "url": "https://admin.paradisemodelschool.com.ng"
+    "orientation": "portrait",
+    "url": "https://admin.cubicjoyschool.com"
   }]
 }
