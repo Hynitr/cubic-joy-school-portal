@@ -588,7 +588,21 @@ echo '<script>window.location.href = "./frn"</script>';
 
 function mover($classr, $cls)  {
 
-
+if ($cls == 'Creche') {
+$cs = 'KG 1';
+} else {
+if ($cls == 'KG 1') {
+$cs = 'KG 2';
+} else {
+if ($cls == 'KG 2') {
+$cs = 'Nursery 1';
+} else {
+if ($cls == 'Nursery 1') {
+$cs = 'Nursery 2';
+} else {
+if ($cls == 'Nursery 2') {
+$cs = 'Basic 1';
+} else {
   if ($cls == 'Basic 1') {
    $cs = 'Basic 2';
   } else {
@@ -628,6 +642,11 @@ function mover($classr, $cls)  {
   }
   }
   }
+}
+}
+}
+}
+}
 	
 	$ssl2 = "UPDATE students SET `Class` = '$cs' WHERE `AdminID` = '$classr'";
 	$ress2 = query($ssl2);	
