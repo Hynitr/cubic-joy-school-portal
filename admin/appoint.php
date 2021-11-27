@@ -192,12 +192,6 @@ include("functions/top.php");
                                         <option name="class" id="class">Grade 3</option>
                                         <option name="class" id="class">Grade 4</option>
                                         <option name="class" id="class">Grade 5</option>
-                                        <option name="class" id="class">J.S.S 1</option>
-                                        <option name="class" id="class">J.S.S 2</option>
-                                        <option name="class" id="class">J.S.S 3</option>
-                                        <option name="class" id="class">S.S.S 1</option>
-                                        <option name="class" id="class">S.S.S 2</option>
-                                        <option name="class" id="class">S.S.S 3</option>
                                     </select>
                                 </div>
                                 <!-- /.input group -->
