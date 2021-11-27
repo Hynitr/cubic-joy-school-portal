@@ -168,10 +168,9 @@ if (!isset($_GET['id'])) {
                                     <select name="dept" id="dept" value="<?php echo $row['Department'] ?>"
                                         class="custom-select">
                                         <option name="dept" id="dept"><?php echo $row['Department'] ?></option>
-                                        <option name="dept" id="dept">Null</option>
-                                        <option name="dept" id="dept">Science</option>
-                                        <option name="dept" id="dept">Arts and Humanities</option>
-                                        <option name="dept" id="dept">Commercial</option>
+                                        <option name="dept" id="dept">Nursery School</option>
+                                        <option name="dept" id="dept">Primary School</option>
+                                        <option name="dept" id="dept">Secondary School</option>
 
                                     </select>
                                 </div>
