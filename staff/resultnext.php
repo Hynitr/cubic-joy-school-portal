@@ -277,6 +277,8 @@ echo '<input type="text" name="year" id="pro" value="null" class="form-control" 
                                             <input type="text" name="year" id="pro" value="<?php echo $rep ?>"
                                                 class="form-control" disabled>
                                         </div>
+
+
                                         <?php
 } else {
   if ($cls == 'Basic 1') {
@@ -322,16 +324,23 @@ echo '<input type="text" name="year" id="pro" value="null" class="form-control" 
  $_SESSION['rep'] = $rep;
 ?>
 
+
+
                                         <div class="form-group col-md-3">
                                             <label for="exampleInputEmail1">Promoted .:</label>
                                             <input type="text" id="pro" value="<?php echo $rep ?>" class="form-control"
                                                 disabled>
                                         </div>
 
+
                                         <?php
 }
 ?>
 
+                                        <div class="form-group col-md-3">
+                                            <label for="exampleInputEmail1">School Resumes .:</label>
+                                            <input type="date" name="resmes" id="resmes" class="form-control">
+                                        </div>
                                     </div>
                                 </div>
 
