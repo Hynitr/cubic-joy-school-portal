@@ -8,7 +8,14 @@ $(document).ready(function () {
 
     $(toastr.error("Loading Please wait..."));
     window.location.href =
-      "./studres?id=" + classr + "&cls=" + cls + "&term=" + term + "&ses=" + ses;
+      "./studres?id=" +
+      classr +
+      "&cls=" +
+      cls +
+      "&term=" +
+      term +
+      "&ses=" +
+      ses;
   });
 
   //uploading result data
@@ -45,11 +52,7 @@ $(document).ready(function () {
                 $(toastr.error("Kindly input CAT 3 score"));
               } else {
                 if (exc > 10) {
-                  $(
-                    toastr.error(
-                      "CAT 3 score can`t be greater than 10"
-                    )
-                  );
+                  $(toastr.error("CAT 3 score can`t be greater than 10"));
                 } else {
                   if (exam == null || exam == "") {
                     $(toastr.error("Exam can`t be empty"));
@@ -135,6 +138,7 @@ $(document).ready(function () {
     var cla = $("#cla").val();
     var tms = $("#term").val();
     var ses = $("#ses").val();
+    var reltdet = $("#reltdet").val();
 
     if (stsbj == null || stsbj == "") {
       $(toastr.error("Subject can`t be empty"));
@@ -155,11 +159,7 @@ $(document).ready(function () {
                 $(toastr.error("Kindly input CAT 3 score"));
               } else {
                 if (exc > 10) {
-                  $(
-                    toastr.error(
-                      "CAT 3 score can`t be greater than 10"
-                    )
-                  );
+                  $(toastr.error("CAT 3 score can`t be greater than 10"));
                 } else {
                   if (exam == null || exam == "") {
                     $(toastr.error("Exam can`t be empty"));
@@ -185,6 +185,7 @@ $(document).ready(function () {
                             cla: cla,
                             tms: tms,
                             ses: ses,
+                            reltdet: reltdet,
                           },
                           success: function (data) {
                             $(toastr.error(data)).html(data);
@@ -213,7 +214,7 @@ $(document).ready(function () {
     $.ajax({
       type: "post",
       url: "functions/init.php",
-      data: { admr: admr, trmr: trmr, ccsr: ccsr, sbjjr: sbjjr, ses:ses },
+      data: { admr: admr, trmr: trmr, ccsr: ccsr, sbjjr: sbjjr, ses: ses },
       success: function (data) {
         $(toastr.error(data)).html(data);
       },
@@ -228,7 +229,15 @@ $(document).ready(function () {
     var ses = $("#ses").val();
 
     $(toastr.error("Loading Please wait..."));
-    window.location.href = "./resultnext?id=" + classr + "&cls=" + cls + "&term=" + term + "&ses=" + ses;
+    window.location.href =
+      "./resultnext?id=" +
+      classr +
+      "&cls=" +
+      cls +
+      "&term=" +
+      term +
+      "&ses=" +
+      ses;
   });
 
   //submit result
@@ -507,18 +516,17 @@ $(document).ready(function () {
     }
   });
 
+  //-------------reset assignmnets------------------//
+  $("#assreseted").click(function () {
+    var assclss = $("#clss").text();
 
-    //-------------reset assignmnets------------------//
-    $("#assreseted").click(function () {
-      var assclss = $("#clss").text();
-  
-      $.ajax({
-        type: "post",
-        url: "functions/init.php",
-        data: {assclss:assclss},
-        success: function (data) {
-          $(toastr.error(data)).html(data);
-        },
-      });
+    $.ajax({
+      type: "post",
+      url: "functions/init.php",
+      data: { assclss: assclss },
+      success: function (data) {
+        $(toastr.error(data)).html(data);
+      },
     });
+  });
 });
