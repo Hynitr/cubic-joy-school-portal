@@ -49,6 +49,12 @@ include("functions/top.php");
                                 <option name="class" id="res">Grade 3</option>
                                 <option name="class" id="res">Grade 4</option>
                                 <option name="class" id="res">Grade 5</option>
+                                <option name="class" id="res">J.S.S 1</option>
+                                <option name="class" id="res">J.S.S 2</option>
+                                <option name="class" id="res">J.S.S 3</option>
+                                <option name="class" id="res">S.S.S 1</option>
+                                <option name="class" id="res">S.S.S 2</option>
+                                <option name="class" id="res">S.S.S 3</option>
                             </select>
                         </div>
 
