@@ -52,6 +52,12 @@ $row = mysqli_fetch_array($res);
                                 <option name="class" id="ressbj">Grade 3</option>
                                 <option name="class" id="ressbj">Grade 4</option>
                                 <option name="class" id="ressbj">Grade 5</option>
+                                <option name="class" id="ressbj">J.S.S 1</option>
+                                 <option name="class" id="ressbj">J.S.S 2</option>
+                                 <option name="class" id="ressbj">J.S.S 3</option>
+                                 <option name="class" id="ressbj">S.S.S 1</option>
+                                 <option name="class" id="ressbj">S.S.S 2</option>
+                                 <option name="class" id="ressbj">S.S.S 3</option>
                             </select>
                         </div>
 
